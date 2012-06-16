@@ -34,8 +34,6 @@ int main( int argc, char *argv[] ) {
         redisContext *c = redisConnect(host, port);
         if (c->err) {
             printf("Error: %s\n", c->errstr);
-        }else{
-            printf("Connection Made! \n");
         }
 
         reply = redisCommand(c,  "KEYS %s", keyString);
@@ -52,12 +50,12 @@ int main( int argc, char *argv[] ) {
                     redisCommand(c, "DEL %s", reply->element[i]->str);
                     printf( "%lu: %s\n", i, reply->element[i]->str );
                 }
-                printf("\n%li objects removed\n", i);
+                printf("%li objects removed\n", i);
             } else {
-                printf("\nCancelled!\n");
+                printf("Cancelled!\n");
             }
         } else
-            printf("\nNo keys matched!\n");
+            printf("No keys matched!\n");
         freeReplyObject(reply);
     }
 }
