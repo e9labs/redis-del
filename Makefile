@@ -15,7 +15,7 @@ build:
 install:
 	install -m 0755 redis-del $(prefix)/bin
 
-clean:
+clean: clean-deps
 	rm -f ./redis-del
 
 clean-deps:
