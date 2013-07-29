@@ -31,8 +31,9 @@ int main( int argc, char *argv[] ) {
         }
 
         redisContext *c = redisConnect(host, port);
-        if (c->err) {
+        if (c != NULL && c->err) {
             printf("Error: %s\n", c->errstr);
+            exit(1);
         }
 
         reply = redisCommand(c,  "KEYS %s", keyString);
@@ -56,6 +57,7 @@ int main( int argc, char *argv[] ) {
         } else
             printf("No keys matched!\n");
         freeReplyObject(reply);
+        exit(0);
     }
 }
 
