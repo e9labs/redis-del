@@ -3,7 +3,8 @@
 
 ### Installation
 
-    TODO
+    $ make
+    $ sudo make install
 
 ### Usage
 
