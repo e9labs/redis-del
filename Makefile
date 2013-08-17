@@ -4,13 +4,14 @@ PREFIX?=/usr/local
 
 .PHONY: all, deps, build, install, clean, clean-deps
 
-all: deps, build
+all: build
+
+build: deps
+	$(CC) -o redis-del redis-del.c hiredis/libhiredis.a
 
 deps:
+	git submodule update --init --recursive
 	$(MAKE) -C ./hiredis
-
-build:
-	$(CC) -o redis-del redis-del.c hiredis/libhiredis.a
 
 install:
 	install -m 0755 redis-del $(prefix)/bin
