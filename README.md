@@ -12,6 +12,8 @@
 
     redis-del prefix:of:keys:*
 
+    redis-del pattern [host] [port]
+
 ### TODO
 
 See: [https://github.com/tapvt/redis-del/issues](https://github.com/tapvt/redis-del/issues)
