@@ -14,7 +14,7 @@ deps:
 	$(MAKE) -C ./hiredis
 
 install:
-	install -m 0755 redis-del $(prefix)/bin
+	install -m 0755 redis-del $(PREFIX)/bin
 
 clean: clean-deps
 	rm -f ./redis-del
