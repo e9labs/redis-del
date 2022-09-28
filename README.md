@@ -1,7 +1,7 @@
 # redis-del
 ## Command line tool for wildcard redis delete
 
-### Installation
+### Installation (POSIX-compliant w/ make)
 
     $ make
     $ sudo make install
