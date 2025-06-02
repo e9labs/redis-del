@@ -1,3 +1,8 @@
 *.swp
 *.swo
 redis-del
+redis-del-test
+*.dSYM/
+.DS_Store
+.vscode/
+*~

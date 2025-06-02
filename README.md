@@ -3,8 +3,14 @@
 
 ### Installation (POSIX-compliant w/ make)
 
-    $ make
+    $ make        # Builds and runs tests
     $ sudo make install
+
+Individual make targets:
+- `make build`: Build only
+- `make test`: Run integration tests
+- `make clean`: Clean build artifacts
+- `make install`: Install to system
 
 ### Usage
 
@@ -13,6 +19,17 @@
     redis-del prefix:of:keys:*
 
     redis-del pattern [host] [port]
+
+### Development
+
+The codebase follows modern C11 practices with:
+- Comprehensive error handling
+- Memory safety checks
+- Input validation
+- Automated testing
+- Static analysis via compiler flags
+
+Tests require a local Redis instance running on default port (6379).
 
 ### TODO
 
